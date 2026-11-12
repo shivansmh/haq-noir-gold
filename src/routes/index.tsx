@@ -3,6 +3,7 @@ import { ArrowRight, ChevronDown, FileText, Inbox, Lock, Scale, ShieldCheck } fr
 import { Logo } from "@/components/Logo";
 import { SweepVisual } from "@/components/SweepVisual";
 import { Stripe } from "@/components/Stripe";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,6 +50,7 @@ function Home() {
             <a href="#faq" className="hover:text-foreground">FAQs</a>
           </nav>
           <div className="flex items-center gap-3 text-sm">
+            <ThemeToggle />
             <Link to="/dashboard" className="hidden font-medium text-muted-foreground hover:text-foreground sm:block">Dashboard</Link>
             <Link to="/dashboard" className="rounded-full bg-gold px-4 py-2 font-semibold text-primary-foreground hover:opacity-90">Start your claim</Link>
           </div>

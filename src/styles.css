@@ -9,7 +9,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 /*
  * Design system definition.
@@ -74,6 +74,52 @@
 
 :root {
   --radius: 0.875rem;
+  --background: oklch(0.995 0.004 350);
+  --foreground: oklch(0.22 0.03 350);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.03 350);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 350);
+  --primary: oklch(0.64 0.2 355);
+  --primary-glow: oklch(0.76 0.15 350);
+  --primary-foreground: oklch(0.99 0.005 350);
+  --secondary: oklch(0.965 0.015 350);
+  --secondary-foreground: oklch(0.22 0.03 350);
+  --muted: oklch(0.97 0.01 350);
+  --muted-foreground: oklch(0.5 0.03 350);
+  --accent: oklch(0.94 0.04 350);
+  --accent-foreground: oklch(0.22 0.03 350);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --warning: oklch(0.72 0.15 60);
+  --border: oklch(0.91 0.025 350);
+  --input: oklch(0.91 0.025 350);
+  --ring: oklch(0.64 0.2 355);
+  --hero: oklch(0.975 0.02 350);
+  --hero-foreground: oklch(0.22 0.03 350);
+  --panel: oklch(1 0 0);
+  --panel-raised: oklch(0.97 0.015 350);
+  --panel-foreground: oklch(0.22 0.03 350);
+  --panel-muted: oklch(0.52 0.03 350);
+  --panel-border: oklch(0.91 0.025 350);
+  --gradient-gold: linear-gradient(120deg, oklch(0.6 0.21 358), oklch(0.75 0.16 345) 50%, oklch(0.62 0.2 355));
+  --shadow-panel: 0 30px 80px -20px oklch(0.64 0.2 355 / 30%);
+  --chart-1: oklch(0.64 0.2 355);
+  --chart-2: oklch(0.72 0.14 340);
+  --chart-3: oklch(0.5 0.12 355);
+  --chart-4: oklch(0.8 0.1 350);
+  --chart-5: oklch(0.7 0.12 20);
+  --sidebar: oklch(0.98 0.012 350);
+  --sidebar-foreground: oklch(0.25 0.03 350);
+  --sidebar-primary: oklch(0.64 0.2 355);
+  --sidebar-primary-foreground: oklch(0.99 0.005 350);
+  --sidebar-accent: oklch(0.94 0.04 350);
+  --sidebar-accent-foreground: oklch(0.45 0.18 355);
+  --sidebar-border: oklch(0.91 0.025 350);
+  --sidebar-ring: oklch(0.64 0.2 355);
+}
+
+.dark {
   --background: oklch(0.12 0.004 80);
   --foreground: oklch(0.95 0.012 85);
   --card: oklch(0.17 0.006 80);
@@ -119,7 +165,7 @@
   --sidebar-ring: oklch(0.8 0.13 85);
 }
 
-.dark {}
+
 
 @theme inline {
   --font-display: "Instrument Serif", ui-serif, Georgia, serif;
@@ -148,7 +194,7 @@
 .animate-marquee-reverse { animation: marquee 34s linear infinite reverse; }
 @utility text-gold { background: var(--gradient-gold); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: sheen 8s linear infinite; }
 @utility bg-gold { background-image: var(--gradient-gold); }
-@utility sweep-beam { background: linear-gradient(180deg, transparent, oklch(0.8 0.13 85 / 18%) 45%, oklch(0.88 0.12 92 / 60%) 50%, oklch(0.8 0.13 85 / 18%) 55%, transparent); }
+@utility sweep-beam { background: linear-gradient(180deg, transparent, color-mix(in oklab, var(--primary) 16%, transparent) 45%, color-mix(in oklab, var(--primary-glow) 60%, transparent) 50%, color-mix(in oklab, var(--primary) 16%, transparent) 55%, transparent); }
 @media (prefers-reduced-motion: reduce) { .animate-marquee, .animate-marquee-reverse { animation: none; } }
 
 @layer base {
