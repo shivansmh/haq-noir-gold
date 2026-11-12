@@ -36,7 +36,7 @@ function Manual() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault(); setBusy(true); setError(""); setRes(null);
     try {
-      const r = await classifyClaim({ data: { prompt } });
+      const r = await classifyClaim({ prompt });
       setRes(r); sweepStore.log(`Manual claim checked: ${CATEGORY[r.category] ?? r.category}`);
     } catch (err) { setError(err instanceof Error ? err.message : "Something went wrong."); }
     finally { setBusy(false); }
