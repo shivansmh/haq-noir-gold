@@ -1,7 +1,6 @@
 import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 import { Activity, FileText, LayoutDashboard, PenLine, Sparkles } from "lucide-react";
 import { Logo } from "@/components/Logo";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/dashboard")({
   component: DashboardLayout,
@@ -17,9 +16,9 @@ const NAV = [
 
 function DashboardLayout() {
   return (
-    <div className="min-h-screen bg-background text-foreground md:flex">
+    <div className="dark min-h-screen bg-background text-foreground md:flex">
       <aside className="flex shrink-0 flex-col border-sidebar-border bg-sidebar text-sidebar-foreground md:sticky md:top-0 md:h-screen md:w-60 md:border-r">
-        <div className="flex items-center justify-between px-5 py-5"><Logo /><ThemeToggle /></div>
+        <div className="flex items-center justify-between px-5 py-5"><Logo /></div>
         <nav className="flex gap-1 overflow-x-auto px-3 pb-3 md:flex-col md:pb-0">
           {NAV.map((n) => (
             <Link

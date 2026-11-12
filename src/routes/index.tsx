@@ -3,7 +3,6 @@ import { ArrowRight, ChevronDown, FileText, Inbox, Lock, Scale, ShieldCheck } fr
 import { Logo } from "@/components/Logo";
 import { SweepVisual } from "@/components/SweepVisual";
 import { Stripe } from "@/components/Stripe";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,9 +49,8 @@ function Home() {
             <a href="#faq" className="hover:text-foreground">FAQs</a>
           </nav>
           <div className="flex items-center gap-3 text-sm">
-            <ThemeToggle />
             <Link to="/dashboard" className="hidden font-medium text-muted-foreground hover:text-foreground sm:block">Dashboard</Link>
-            <Link to="/dashboard" className="rounded-full bg-gold px-4 py-2 font-semibold text-primary-foreground hover:opacity-90">Start your claim</Link>
+            <Link to="/dashboard" className="rounded-full bg-foreground px-4 py-2 font-semibold text-background hover:opacity-90">Start your claim</Link>
           </div>
         </div>
       </header>
@@ -60,15 +58,15 @@ function Home() {
       <section className="relative overflow-hidden bg-hero text-hero-foreground">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-[1.1fr_1fr] md:py-24">
           <div>
-            <Link to="/dashboard/sweep" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 text-primary py-1 text-xs font-semibold">
+            <Link to="/dashboard/sweep" className="inline-flex items-center gap-2 rounded-full bg-hero-foreground/15 px-3 py-1 text-xs font-semibold">
               Sweep is live — find money stuck in failed payments <span className="opacity-80">Try it →</span>
             </Link>
-            <h1 className="mt-6 font-display text-5xl leading-[1.02] md:text-7xl">Money stuck? Sweep your inbox and <span className="text-gold italic">claim it back.</span></h1>
+            <h1 className="mt-6 font-display text-5xl leading-[1.02] md:text-7xl">Money stuck? Sweep your inbox and <span className="italic text-panel">claim it back.</span></h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed opacity-90 md:text-lg">
               Haq finds failed UPI payments, ATM errors and overdue invoices in your email, checks them against the rule, and drafts the claim so you don't have to fight the bank alone.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-5">
-              <Link to="/dashboard" className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-primary-foreground shadow-panel hover:opacity-90">
+              <Link to="/dashboard" className="inline-flex items-center gap-2 rounded-full bg-hero-foreground px-5 py-3 text-sm font-semibold text-foreground shadow-sm hover:opacity-90">
                 Check my inbox <ArrowRight className="size-4" />
               </Link>
               <a href="#how" className="text-sm font-semibold underline-offset-4 hover:underline">See how it works</a>
@@ -133,9 +131,9 @@ function Home() {
             </details>
           ))}
         </div>
-        <div className="mt-14 rounded-2xl border border-primary/30 bg-hero p-8 text-hero-foreground shadow-panel md:p-10">
+        <div className="mt-14 rounded-2xl bg-hero p-8 text-hero-foreground md:p-10">
           <h3 className="font-display text-3xl md:text-4xl">See what's hiding in your inbox.</h3>
-          <Link to="/dashboard/sweep" className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-primary-foreground">Run a sweep <ArrowRight className="size-4" /></Link>
+          <Link to="/dashboard/sweep" className="mt-6 inline-flex items-center gap-2 rounded-full bg-hero-foreground px-5 py-3 text-sm font-semibold text-foreground">Run a sweep <ArrowRight className="size-4" /></Link>
         </div>
       </section>
 
